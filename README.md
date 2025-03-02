@@ -36,7 +36,9 @@ Alternatively, you can launch training using the configuration file in this repo
 itwinai exec-pipeline --config-name config.yaml
 
 # If you want to dynamically override some fields in the config file
-itwinai exec-pipeline --config-name config.yaml epochs=2
+itwinai exec-pipeline --config-name config.yaml \
+    epochs=2 \
+    training_pipeline.steps.0.config.path_models my_models 
 ```
 
 > [!NOTE]

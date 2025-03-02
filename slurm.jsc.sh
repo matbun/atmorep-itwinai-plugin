@@ -13,7 +13,7 @@
 #SBATCH --partition=develbooster
 #SBATCH --nodes=2
 #SBATCH --gpus-per-node=4
-#SBATCH --cpus-per-gpu=4
+#SBATCH --cpus-per-task=32
 #SBATCH --exclusive
 
 # gres options have to be disabled for deepv
@@ -21,6 +21,8 @@
 
 # Load environment modules
 ml Stages/2024 GCC OpenMPI CUDA/12 MPI-settings/CUDA Python HDF5 PnetCDF libaio mpi4py
+
+source .venv/bin/activate
 
 # Job info
 echo "DEBUG: TIME: $(date)"
@@ -44,7 +46,7 @@ fi
 echo
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES="0,1,2,3"
 
 export UCX_TLS="^cma"
 export UCX_NET_DEVICES=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1
@@ -62,6 +64,8 @@ export GLOO_SOCKET_IFNAME=ib0   # Ensure GLOO (fallback) also uses the correct i
 
 
 torchrun_launcher(){
+
+  ARGS=$@
   
   srun --cpu-bind=none --ntasks-per-node=1 \
     bash -c "torchrun \
@@ -72,10 +76,11 @@ torchrun_launcher(){
     --rdzv_conf=is_host=\$(((SLURM_NODEID)) && echo 0 || echo 1) \
     --rdzv_backend=c10d \
     --rdzv_endpoint='$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)'i:29500 \
-    $1"
+    $ARGS"
 }
 
 
 # Launch atmorep training. Ref: https://github.com/clessig/atmorep/blob/iluise/develop/itwinai/slurm_atmorep.sh
-torchrun_launcher debug_trainer.py
+# torchrun_launcher debug_trainer.py
+torchrun_launcher --no-python uv run itwinai exec-pipeline --config-name config.yaml epochs=2
 

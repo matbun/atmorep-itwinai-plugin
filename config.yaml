@@ -5,33 +5,46 @@
 #
 # Credit:
 # - Ilaria Luise <ilaria.luise@cern.ch>
+# - Matteo Bunino <matteo.bunino@cern.ch> - CERN
 # - Anna Elise Lappe <anna.elise.lappe@cern.ch> - CERN
 # - Jarl Sondre Sæther <jarl.sondre.saether@cern.ch> - CERN
-# - Matteo Bunino <matteo.bunino@cern.ch> - CERN
 # --------------------------------------------------------------------------------------
 
 strategy: ddp
 epochs: 128
-random_seed:  0 #torch.initial_seed()
+random_seed: 0
+zarr_dataset: /p/scratch/intertwin/datasets/era5_y2021_res025.zarr
 
 training_pipeline:
   _target_: itwinai.pipeline.Pipeline
   steps:
     - _target_: itwinai.plugins.atmorep.trainer.AtmoRepTrainer
       config:
+        # Model
         mode: train
         load_model: null
+        
+        # Filesystem: dataset and results
         path_models: models/
         path_results: results/
         path_plots: results/plots/
-        path_data: /p/scratch/intertwin/datasets/era5_y2021_res025.zarr/
-        file_path: /p/scratch/intertwin/datasets/era5_y2021_res025.zarr # /p/scratch/atmo-rep/data/era5_1deg/months/era5_y1979_2021_res025_chunk8.zarr #this will change in the new atmorep branch
-        fields: [ [ "velocity_u", [ 1, 1024, [ ], 0 ], [ 96, 105, 114, 123, 137 ], [12, 3, 6], [3, 18, 18], [0.5, 0.9, 0.2, 0.05] ] ]
+        path_data: ${zarr_dataset} #/p/scratch/intertwin/datasets/era5_y2021_res025.zarr/
+        file_path: ${zarr_dataset} #/p/scratch/intertwin/datasets/era5_y2021_res025.zarr
+        
+        fields: [ 
+          [ 
+            "velocity_u",
+            [ 1, 1024, [ ], 0 ],
+            [ 96, 105, 114, 123, 137 ],
+            [12, 3, 6],
+            [3, 18, 18],
+            [0.5, 0.9, 0.2, 0.05]
+          ]
+        ]
         #to load a pretrained run and continue training:
         #fields: [ [ "velocity_u", [ 1, 1024, [ ], 0, ["model_id", "epoch" ] ], [ 96, 105, 114, 123, 137 ], [12, 3, 6], [3, 18, 18], [0.5, 0.9, 0.2, 0.05] ]
         fields_prediction: [ ["velocity_u", 1.] ]
         fields_targets: []
-        n_size: 0
 
         years_train: [2021] # ${itwinai.range:1979,2021}
         years_val: [2021]  
@@ -48,9 +61,9 @@ training_pipeline:
         batch_size: 96
         num_epochs: ${epochs}
         num_samples_per_epoch: ${itwinai.multiply:4096,12}
-        num_samples_validate: ${itwinai.multiply:128,12}
+        num_samples_validate: 128 #${itwinai.multiply:128,12} 
         num_loader_workers: 6
-          
+
         # additional infos
         size_token_info: 8
         size_token_info_net: 16
@@ -114,6 +127,7 @@ training_pipeline:
 
         # usually use %>wandb offline to switch to disable syncing with server
         with_wandb: True
+        n_size: 0
       # model:
       #   _target_: atmorep.core.atmorep_model.AtmoRep
       strategy: ${strategy}
