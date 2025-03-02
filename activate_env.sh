@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# shellcheck disable=all
+
 # Load HPC modules
 ml --force purge
 ml Stages/2024 GCC OpenMPI CUDA/12 cuDNN MPI-settings/CUDA
