@@ -6,7 +6,7 @@
 
 - What is AtmoRep
 - Credits
-- How to install
+- How to install and use
 - How to run
 - How to use containers
 
