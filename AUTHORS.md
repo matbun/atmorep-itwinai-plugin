@@ -7,7 +7,7 @@
 ```text
 @misc{Lessig2023atmorep,
   title = {AtmoRep: A stochastic model of atmosphere dynamics using large scale representation learning},
-      author = {Christian Lessig and Ilaria Luise and Bing Gong and Michael Langguth and Scarlet Stadler and Martin Schultz},
+  author = {Christian Lessig and Ilaria Luise and Bing Gong and Michael Langguth and Scarlet Stadler and Martin Schultz},
   eprint = {2308.13280},
   primaryclass = {physics.ao-ph},
   url = {https://arxiv.org/abs/2308.13280},
