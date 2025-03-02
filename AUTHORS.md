@@ -2,7 +2,17 @@
 
 **AtmoRep official repository**: [https://github.com/clessig/atmorep](https://github.com/clessig/atmorep)
 
-**AtmoRep paper**: Lessig, Christian, Ilaria Luise, Bing Gong, Michael Langguth, Scarlet Stadtler, and Martin Schultz. ‘AtmoRep: A Stochastic Model of Atmosphere Dynamics Using Large Scale Representation Learning’.  [https://doi.org/10.48550/arXiv.2308.13280](https://doi.org/10.48550/arXiv.2308.13280).
+**AtmoRep paper**: 
+
+```text
+@misc{Lessig2023atmorep,
+  title = {AtmoRep: A stochastic model of atmosphere dynamics using large scale representation learning},
+	author = {Christian Lessig and Ilaria Luise and Bing Gong and Michael Langguth and Scarlet Stadler and Martin Schultz},
+  eprint = {2308.13280},
+  primaryclass = {physics.ao-ph},
+  url = {https://arxiv.org/abs/2308.13280},
+  year = {2023},
+```
 
 ## Maintainers
 
