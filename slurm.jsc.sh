@@ -2,6 +2,8 @@
 
 # SLURM jobscript for JSC systems
 
+# shellcheck disable=all
+
 # Job configuration
 #SBATCH --job-name=distributed_training
 #SBATCH --account=intertwin
