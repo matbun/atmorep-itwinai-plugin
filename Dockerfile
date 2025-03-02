@@ -15,8 +15,8 @@ COPY src src
 # Install dependencies
 RUN pip install --no-cache-dir .
 
-# Copy your scripts
-COPY main.py main.py
+# Copy additional files
+COPY config.yaml config.yaml
 
 # Set entrypoint
-CMD ["python", "main.py"]
+CMD ["itwinai", "exec-pipeline"]
