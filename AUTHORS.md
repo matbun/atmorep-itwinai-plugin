@@ -30,6 +30,6 @@ The following contributors have extended and modified the original work:
 - **Matteo Bunino** (European Organization for Nuclear Research, CERN) - [matteo.bunino@cern.ch](mailto:matteo.bunino@cern.ch)
 - **Ilaria Luise** (European Organization for Nuclear Research, CERN)
 
-This repository is licensed under **Apache-2.0**, while portions remain under MIT.
+This repository is licensed under **Apache-2.0**.
 
 [All contributors](https://github.com/matbun/atmorep-itwinai-plugin/graphs/contributors)
