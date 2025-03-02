@@ -1,8 +1,12 @@
 models
 results
 wandb
+outputs
+checkpoints
+logs_*
 *.out
 *.err
+tmp*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

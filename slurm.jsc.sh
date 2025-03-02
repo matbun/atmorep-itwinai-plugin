@@ -76,6 +76,6 @@ torchrun_launcher(){
 }
 
 
-# Launch atmorep. Ref: https://github.com/clessig/atmorep/blob/iluise/develop/itwinai/slurm_atmorep.sh
+# Launch atmorep training. Ref: https://github.com/clessig/atmorep/blob/iluise/develop/itwinai/slurm_atmorep.sh
 torchrun_launcher debug_trainer.py
 
