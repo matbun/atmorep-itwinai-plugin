@@ -12,6 +12,7 @@
   primaryclass = {physics.ao-ph},
   url = {https://arxiv.org/abs/2308.13280},
   year = {2023},
+}
 ```
 
 ## Maintainers
