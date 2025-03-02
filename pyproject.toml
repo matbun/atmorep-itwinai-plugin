@@ -3,16 +3,33 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "itwinai-awesome-plugin"
+name = "atmorep-itwinai-plugin"
 version = "0.0.1"
-description = "User's custom plugin for itwinai"
-requires-python = ">=3.10"
+description = "AtmoRep plugin for itwinai"
+requires-python = ">=3.11"
 readme = "README.md"
 license = { file = "LICENSE" }
-authors = [{ name = "User Name", email = "user@example.com" }]
+authors = [
+    { name = "Matteo Bunino", email = "matteo.bunino@cern.ch" },
+    { name = "Ilaria Luise", email = "ilaria.luise@cern.ch" },
+]
 dependencies = [
-    "itwinai[torch]",
+    "atmorep@git+https://github.com/matbun/atmorep@iluise/itwinai",
+    "cfgrib>=0.9.15.0",
+    "click>=8.1.8",
+    "dask>=2025.2.0",
+    "importlib-resources>=6.5.2",
+    "itwinai[torch]@git+https://github.com/interTwin-eu/itwinai@unified-trainers",
+    "mlflow>=2.20.3",
+    "pandas>=2.2.3",
+    "platformdirs>=4.3.6",
+    "psutil>=7.0.0",
     "pytest>=8.3.4",
+    "ray>=2.42.1",
+    "requests>=2.32.3",
+    "six>=1.17.0",
+    "xarray>=2025.1.2",
+    "zarr>=3.0.4",
 ]
 
 [tool.setuptools.packages.find]
@@ -22,11 +39,7 @@ where = ["src"]
 
 # Make sure to list all the plugin subfolders here,
 # otherwise the plugin may not be installed correctly!
-include = [
-    "itwinai.plugins.my_awesome_plugin",
-    "itwinai.plugins.my_awesome_plugin.plugin_subfolder",
-    "itwinai.plugins.my_awesome_plugin.another_plugin_subfolder",
-]
+include = ["itwinai.plugins.atmorep"]
 
 # Ruff configuration: https://docs.astral.sh/ruff/configuration/
 [tool.ruff]

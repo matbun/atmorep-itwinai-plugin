@@ -1,8 +1,16 @@
 # Authors
 
-**AtmoRep official repository**: [https://github.com/clessig/atmorep](https://github.com/clessig/atmorep)
+## Original Authors (AtmoRep)
 
-**AtmoRep paper**:
+The following authors contributed to the original MIT-licensed AtmoRep project:
+
+- **Christian Lessig** (European Centre for Medium-Range Weather Forecasts, ECMWF)
+- **Ilaria Luise** (European Organization for Nuclear Research, CERN)
+- **Martin Schultz** (Forschungszentrum Jülich, FZJ)
+- **Michael Langguth** (Forschungszentrum Jülich, FZJ)
+
+Source: [Original Repository](https://github.com/clessig/atmorep)  
+License: MIT
 
 ```text
 @misc{Lessig2023atmorep,
@@ -15,10 +23,13 @@
 }
 ```
 
-## Maintainers
+## Contributors to This Repository
 
-Matteo Bunino [matteo.bunino@cern.ch](mailto:matteo.bunino@cern.ch)
+The following contributors have extended and modified the original work:
 
-## Contributors
+- **Matteo Bunino** (European Organization for Nuclear Research, CERN) - [matteo.bunino@cern.ch](mailto:matteo.bunino@cern.ch)
+- **Ilaria Luise** (European Organization for Nuclear Research, CERN)
 
-[All contributors](https://github.com/interTwin-eu/atmorep-itwinai-plugin/graphs/contributors)
+This repository is licensed under **Apache-2.0**, while portions remain under MIT.
+
+[All contributors](https://github.com/matbun/atmorep-itwinai-plugin/graphs/contributors)
