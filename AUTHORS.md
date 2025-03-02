@@ -20,4 +20,4 @@ Matteo Bunino [matteo.bunino@cern.ch](mailto:matteo.bunino@cern.ch)
 
 ## Contributors
 
-[All contributors](https://github.com/interTwin-eu/itwinai-atmorep-plugin/graphs/contributors)
+[All contributors](https://github.com/interTwin-eu/atmorep-itwinai-plugin/graphs/contributors)
