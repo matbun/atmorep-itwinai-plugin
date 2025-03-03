@@ -24,6 +24,12 @@ authors:
     email: m.langguth@fz-juelich.de
     orcid: 'https://orcid.org/0000-0003-3354-5333'
     affiliation: Forschungszentrum Jülich (FZJ)
+  - given-names: Bing
+    family-names: Gong
+    affiliation: Forschungszentrum Jülich (FZJ)
+  - given-names: Scarlet
+    family-names: Stadler
+    affiliation: Forschungszentrum Jülich (FZJ)
   
   # New Contributors to the Plugin
   - given-names: Matteo

@@ -8,6 +8,8 @@ The following authors contributed to the original MIT-licensed AtmoRep project:
 - **Ilaria Luise** (European Organization for Nuclear Research, CERN)
 - **Martin Schultz** (Forschungszentrum Jülich, FZJ)
 - **Michael Langguth** (Forschungszentrum Jülich, FZJ)
+- **Bing Gong** (Forschungszentrum Jülich, FZJ)
+- **Scarlet Stadler** (Forschungszentrum Jülich, FZJ)
 
 Source: [Original Repository](https://github.com/clessig/atmorep)  
 License: MIT
