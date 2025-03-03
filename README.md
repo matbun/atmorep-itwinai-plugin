@@ -8,7 +8,9 @@ This repository is an extended version of AtmoRep, originally developed
 by the AtmoRep team. This version integrates AtmoRep into the [itwinai](https://github.com/interTwin-eu/itwinai)
 framework, enhancing its usability within digital twin applications.
 
-[Original Repository](https://github.com/clessig/atmorep)  
+[Original Repository](https://github.com/clessig/atmorep)
+
+![atmorep](img/conceptual.png)
 
 ## How to use this plugin
 
